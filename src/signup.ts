@@ -2,8 +2,6 @@ import crypto from "crypto";
 import express from "express";
 import pgp from "pg-promise";
 import { validate } from "./validateCpf";
-const app = express();
-app.use(express.json());
 
 export async function signup (input: any): Promise<any> {
 	const connection = pgp()("postgres://postgres:postgres@localhost:5432/postgres");
@@ -33,4 +31,3 @@ export async function signup (input: any): Promise<any> {
 	}
 };
 
-app.listen(3000);
