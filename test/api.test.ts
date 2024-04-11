@@ -27,7 +27,7 @@ test("Deve criar uma conta para o motorista", async function () {
 		name: "John Doe",
 		email: `john.doe${Math.random()}@gmail.com`,
 		cpf: "87748248800",
-        carPlate: 'BRA2019',
+    carPlate: 'BRA2019',
 		isDriver: true
 	};
 	const responseSignup = await axios.post("http://localhost:3000/signup", input);
@@ -39,4 +39,5 @@ test("Deve criar uma conta para o motorista", async function () {
 	expect(outputGetAccount.name).toBe(input.name);
 	expect(outputGetAccount.email).toBe(input.email);
 	expect(outputGetAccount.cpf).toBe(input.cpf);
+	expect(outputGetAccount.car_plate).toBe(input.carPlate);
 });
